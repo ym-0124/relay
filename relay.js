@@ -12,7 +12,7 @@ var Parameter = {
     }
 };
 
-server.addListener("connection" function(connection){
+server.addListener("connection", function(connection){
 	sys.debug("client connected: " + connection.id);
 
 	connection.addListener("message", function(message){
@@ -29,4 +29,4 @@ relay.onmessage = function(buffer){
     server.broadcast(buffer.data);
 }
 
-server.listern(8001);
+server.listen(8001);
